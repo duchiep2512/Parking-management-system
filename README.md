@@ -6,6 +6,10 @@ Một hệ thống quản lý bãi đỗ thông minh dùng nhận dạng biển 
 - Mục tiêu: Quay/video live stream từ camera hoặc phát file video, nhận dạng biển số, cho phép check-in (lưu ảnh & thời gian vào bãi) và check-out (xóa dữ liệu ảnh). Có giao diện trực quan để demo.
 - Môi trường: Python 3.10+ (đã test trên Windows). Sử dụng PyQt5 cho UI, OpenCV để xử lý ảnh, Ultralytics (YOLOv8) cho detection/segmentation và nhận diện ký tự.
 
+## Dataset
+- File dữ liệu dùng để train model nhận diện biển số xe [data_plate](https://drive.google.com/drive/folders/1dRoG_eEtvyNTquGNyVS_5w6rjK_zsV-H?usp=drive_link)
+- File dữ liệu dùng để train model nhận diện ký tự biển số xe [data_ocr](https://drive.google.com/drive/folders/1n_znXHbfOKEzLWmnXwKbjTACyRQf9KSJ?usp=sharing)
+
 ## Cấu trúc project
 - `app.py` — Ứng dụng chính (PyQt5). Chịu trách nhiệm mở camera / video, vòng lặp xử lý frame, gọi pipeline OCR (`OcrPlate`), hiển thị ảnh, xử lý các nút Check in / Check out / Resume. Có một số cấu hình (đường dẫn model, thresholds, auto-capture config) ở đầu file.
 
@@ -22,7 +26,7 @@ Một hệ thống quản lý bãi đỗ thông minh dùng nhận dạng biển 
 - `requirements.txt` — Danh sách phụ thuộc chính: `ultralytics`, `onnxruntime`, `PyQt5`, `opencv-python`, `numpy`.
 
 - `model/` — Chứa 2 file model được training / export:
-  - `best.pt` — Model YOLOv8 dùng để detect/segment biển (dùng khi gọi `OcrPlate(..., PLATE_WEIGHTS)`).
+  - `best.pt` — Model YOLOv8 dùng để detect/segment biển (dùng khi gọi `OcrPlate(..., PLATE_WEIGHTS)`). 
   - `best_ocr.pt` — Model YOLOv8/char detector cho ký tự trên biển.
 
 - `image_data/` — Thư mục lưu trữ ảnh entry cho từng biển (mỗi biển một thư mục con). Thư mục mẫu đã có vài ảnh demo.
