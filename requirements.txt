@@ -1,0 +1,6 @@
+
+ultralytics>=8.2.0
+onnxruntime
+PyQt5
+opencv-python
+numpy
