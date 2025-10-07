@@ -84,11 +84,19 @@ python app.py
 
 ## Demo — 3 trạng thái (dùng ảnh có sẵn trong `image_github/`)
 
+
 Trong thư mục `image_github/` có sẵn ba ảnh dùng để demo ba trạng thái phổ biến của xe trong hệ thống:
 
-- `Chua_vao_bai.jpg` — minh hoạ trạng thái "Chưa vào bãi" (xe xuất hiện nhưng chưa được check-in)
-- `Da_vao_bai.jpg`  — minh hoạ trạng thái "Đã vào bãi" (ảnh entry đã được lưu trong `image_data/`)
-- `Da_roi_bai.jpg`  — minh hoạ trạng thái "Đã rời bãi" (xe đã check-out và dữ liệu entry bị xóa)
+- Minh hoạ trạng thái "Chưa vào bãi" (xe xuất hiện nhưng chưa được check-in)
+![Chưa vào bãi](image_github/Chua_vao_bai.jpg)
+
+- Minh hoạ trạng thái "Đã vào bãi" 
+![Đã vào bãi](image_github/Da_vao_bai.jpg)
+
+- Minh hoạ trạng thái "Đã rời bãi" (xe đã check-out và dữ liệu entry bị xóa)
+![Đã rời bãi](image_github/Da_roi_bai.jpg)
+
+
 
 
 
